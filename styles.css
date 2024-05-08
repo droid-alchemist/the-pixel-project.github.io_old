@@ -1,0 +1,208 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Google Sans","sans-serif";
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0; /* Stick to the top of the viewport */
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    position: fixed;
+    top: 60px; /* Adjusted top position to not overlay header */
+    right: -300px; /* Initially hidden off the screen */
+    bottom: 20px; /* Added bottom position to ensure equal spacing from footer */
+    height: calc(100vh - 100px); /* Adjusted height to fit screen minus header and footer */
+    width: 150px; /* Increased width for better usability */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    transition: right 0.3s ease; /* Transition effect */
+    list-style-type: none; /* Remove bullets */
+    z-index: 2000; /* Ensure below navbar */
+}
+
+.nav-links li {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Set the color to a different one, like dark gray */
+}
+
+.nav-links li a:hover {
+    color: #555; /* Change the color on hover */
+}
+
+/* Hamburger menu */
+.menu-toggle {
+    display: block; /* Show on smaller screens */
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001; /* Ensure above other content */
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 15px;
+    margin-top: 6px; /* Adjust the margin-top value as needed */
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+}
+
+.hamburger .line {
+    width: 100%;
+    height: 3px;
+    background-color: grey;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Add transition for smooth animation */
+}
+
+.menu-open .line:nth-child(1) {
+    transform: rotate(45deg) translateY(2px) translateX(6px); /* Rotate and position the top line */
+}
+
+.menu-open .line:nth-child(3) {
+    transform: rotate(-45deg) translateY(-2px) translateX(6px); /* Rotate and position the bottom line */
+}
+
+.menu-open .line:nth-child(2) {
+    opacity: 0; /* Hide middle line when menu is open */
+}
+
+
+/* Body styles */
+.hero {
+    height: calc(100vh - 80px); /* Adjusted height to fit screen minus header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(270deg, #89f7fe, #66a6ff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    padding: 0 20px; /* Adjusted padding to remove empty space below navbar */
+}
+
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.content {
+    text-align: center;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure above content */
+}
+
+.social-icons {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+}
+
+.xda path {
+    transition: fill 0.3s ease; /* Add transition for smooth color change */
+}
+
+.xda:hover path {
+    fill: #EF8401; /* Change color to xda orange on hover */
+}
+
+.social-icons a:hover {
+    transform: scale(1.2); /* Increase size on hover */
+}
+
+.fa-github-alt,
+.fa-gitlab,
+.fa-telegram {
+    transition: color 0.3s ease; /* Add transition for smooth color change */
+}
+
+.gh:hover .fa-github-alt {
+    color: #6e5494 !important; /* Change icon color to github purple on hover */
+}
+
+.gl:hover .fa-gitlab {
+    color: #fc6d26 !important; /* Change icon color to gitlab orange on hover */
+}
+
+.tg:hover .fa-telegram {
+    color: #0088cc !important; /* Change icon color to telegram blue on hover */
+}
+
+
+
+/* Responsive styles */
+@media only screen and (min-width: 768px) {
+    .menu-toggle {
+        display: none; /* Hide on larger screens */
+    }
+
+    .nav-links {
+        position: static;
+        flex-direction: row;
+        justify-content: flex-end;
+        background-color: transparent;
+        backdrop-filter: none;
+        height: auto;
+        width: auto;
+        right: 0;
+        transition: none;
+        margin-right: 20px; /* Add margin to separate from logo */
+        top: auto; /* Reset top position */
+        bottom: auto; /* Reset bottom position */
+    }
+
+    .nav-links li {
+        margin-right: 20px;
+        margin-bottom: 0; /* Remove bottom margin */
+    }
+}
+
+
