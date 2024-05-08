@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
     position: fixed;
@@ -21,7 +21,7 @@
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .nav-links {
@@ -61,8 +61,8 @@
     display: block; /* Show on smaller screens */
     cursor: pointer;
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    left: 10px;
     z-index: 1001; /* Ensure above other content */
 }
 
@@ -72,7 +72,7 @@
     justify-content: space-between;
     width: 25px;
     height: 15px;
-    margin-top: 6px; /* Adjust the margin-top value as needed */
+    margin-top: 5px; /* Adjust the margin-top value as needed */
 }
 
 .line {
@@ -128,7 +128,7 @@
 footer {
     background-color: #333;
     color: white;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
     position: fixed;
     bottom: 0;
@@ -137,7 +137,7 @@ footer {
 }
 
 .social-icons {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .social-icons a {
@@ -206,3 +206,39 @@ footer {
 }
 
 
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 18px;
+        transform: translateY(-50%);
+    }
+
+    .navbar {
+        position: relative;
+        height: 40px;
+    }
+
+    /* Inside the @media only screen and (max-width: 768px) media query */
+    .logo {
+        position: absolute;
+        right: 20px; /* Adjusted position */
+        top: 50%;
+        transform: translateY(-50%);
+        /* Ensure the logo doesn't overlap with the menu toggle button */
+        z-index: 1002; /* Ensure above other content */
+    }
+
+    .nav-links {
+        margin-right: 20px;
+    }
+}
+
+
+
+    .nav-links {
+        margin-right: 20px;
+    }
+}

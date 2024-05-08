@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to toggle the small view sliding navbar
     function toggleNavbar() {
-        if (navLinks.style.right === "0px") {
+        if (navLinks.style.left === "0px" || navLinks.style.left === "") {
             closeNavbar();
             bodyContent.style.transition = 'transform 0.3s ease';
             bodyContent.style.transform = 'translateX(0)';
@@ -33,14 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to open the small view sliding navbar
     function openNavbar() {
-        navLinks.style.right = "0px";
+        navLinks.style.left = "0"; // Set left to 0 to slide in from the left side
         // Toggle the 'menu-open' class on the menu toggle button
         menuToggle.classList.add('menu-open');
     }
 
     // Function to close the small view sliding navbar
     function closeNavbar() {
-        navLinks.style.right = "-300px";
+        navLinks.style.left = "-100%"; // Hide navbar completely
         // Toggle the 'menu-open' class on the menu toggle button
         menuToggle.classList.remove('menu-open');
     }
