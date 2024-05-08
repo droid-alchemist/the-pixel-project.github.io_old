@@ -36,13 +36,8 @@ function openNavbar() {
     navLinks.style.left = "0"; // Set left to 0 to slide in from the left side
     // Toggle the 'menu-open' class on the menu toggle button
     menuToggle.classList.add('menu-open');
-    
-    console.log("Body content before:", bodyContent.style.marginLeft); // Check the current marginLeft value
-    
     // Push body content to the right by the width of the navbar
     bodyContent.style.marginLeft = '250px'; // Adjust the value as needed to match the width of the navbar
-    
-    console.log("Body content after:", bodyContent.style.marginLeft); // Check the new marginLeft value
 }
     // Function to close the small view sliding navbar
     function closeNavbar() {
